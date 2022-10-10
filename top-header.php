@@ -444,10 +444,10 @@
                                     <img alt="Logo" src="/assets/media/logos/favicon.svg">
                                 </div>
                                 <div class="d-flex flex-column">
-                                    <div class="fw-bold d-flex align-items-center fs-5"><?php echo $_SESSION["adminName"] ?>
+                                    <div class="fw-bold d-flex align-items-center fs-5"><?php echo $_SESSION['adminName'] ?>
                                         <span class="badge badge-light-success fw-bold fs-8 px-2 py-1 ms-2">Master</span>
                                     </div>
-                                    <a href="#" class="fw-semibold text-muted text-hover-primary fs-7"><?php echo $_SESSION["adminEmail"] ?></a>
+                                    <a href="#" class="fw-semibold text-muted text-hover-primary fs-7"><?php echo $_SESSION['adminName'] ?></a>
                                 </div>
                             </div>
                         </div>

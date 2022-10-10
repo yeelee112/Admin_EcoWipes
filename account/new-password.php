@@ -65,7 +65,7 @@
 								<div class="text-center mb-10">
 									<h1 class="text-dark fw-bolder mb-3">Cài đặt mật khẩu mới</h1>
 									<div class="text-gray-500 fw-semibold fs-6">Bạn đã đổi mật khẩu rồi? 
-									<a href="sign-in.html" class="link-primary fw-bold">Đăng nhập</a></div>
+									<a href="sign-in" class="link-primary fw-bold">Đăng nhập</a></div>
 								</div>
                                 <input type="hidden" name="email" value="<?php echo $email ?>">
 								<input type="hidden" name="token" value="<?php echo $token ?>">

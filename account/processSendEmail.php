@@ -17,7 +17,6 @@
 
     $dotenv->required(['USER_APP_GMAIL', 'PASSWORD_APP_GMAIL']);
     $mysqli = DataProvider::getConnection();
-
     if(isset($_GET['email'])){
         $email = mysqli_real_escape_string($mysqli, $_GET["email"]);
         $checkSecure++;
@@ -51,7 +50,7 @@
 
                 //Recipients
                 $mail->setFrom($_ENV['USER_APP_GMAIL'], 'Admin Thế giới khăn ướt');
-                $mail->addAddress($email);     //Add a recipient             //Name is optional
+                $mail->addAddress('chauhoangan789@gmail.com');     //Add a recipient             //Name is optional
                 $mail->addReplyTo('digital@ecowipes.com.vn');
 
 

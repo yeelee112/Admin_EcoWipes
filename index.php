@@ -173,7 +173,7 @@
 								<h1 class="d-flex align-items-center text-dark fw-bold my-1 fs-3">eCommerce Dashboard</h1>
 							</div>
 							<div class="d-flex align-items-center py-1">
-								Hallo buổi sáng tốt nành
+								Hallo buổi sáng tốt lành
 							</div>
 						</div>
 					</div>
@@ -466,10 +466,11 @@
 														<select class="form-select form-select-transparent text-dark fs-7 lh-1 fw-bold py-0 ps-3 w-auto" data-control="select2" data-hide-search="true" data-dropdown-css-class="w-200px" data-placeholder="Select an option" data-kt-table-widget-4="filter_status">
 															<option></option>
 															<option value="Show All" selected="selected">Hiển thị tất cả</option>
-															<option value="Đã hoàn thành">Đã hoàn thành</option>
-															<option value="Đã xác nhận">Đã xác nhận</option>
-															<option value="Đã Từ chối">Đã Từ chối</option>
 															<option value="Chờ xác nhận">Chờ xác nhận</option>
+															<option value="Đã xác nhận">Đã xác nhận</option>
+															<option value="Đang giao hàng">Đang giao hàng</option>
+															<option value="Đã hoàn thành">Đã hoàn thành</option>
+															<option value="Đã từ chối">Đã từ chối</option>
 														</select>
 													</div>
 													<div class="position-relative my-1">
@@ -533,7 +534,7 @@
 													?>
 													<tr>
 														<td>
-															<a href="#" class="text-main">#<?php echo $rowOrder["id"] ?></a>
+															<a href="apps/ecommerce/sales/order-detail?id=<?php echo $rowOrder["id"] ?>" class="text-main">#<?php echo $rowOrder["id"] ?></a>
 														</td>
 														<td class="text-end"><?php echo time_elapsed_string($rowOrder["created_at"]); ?></td>
 														<td class="text-end">
@@ -544,9 +545,21 @@
 															<span class="text-gray-800 fw-bolder"><?php echo after_last ('-', $rowOrder["address"]); ?></span>
 														</td>
 														<td class="text-end">
-															<?php if($rowOrder["status_order"] == 0){
+															<?php if($rowOrder["status_order"] == 4){
+																echo '<span class="badge py-3 px-4 fs-7 badge-light-danger">Đã từ chối</span>';
+															}
+															else if($rowOrder["status_order"] == 1){
+																echo '<span class="badge py-3 px-4 fs-7 badge-light-primary">Đã xác nhận</span>';
+															}
+															else if($rowOrder["status_order"] == 2){
+																echo '<span class="badge py-3 px-4 fs-7 badge-light-info">Đang giao hàng</span>';
+															}
+															else if($rowOrder["status_order"] == 3){
+																echo '<span class="badge py-3 px-4 fs-7 badge-light-success">Đã hoàn thành</span>';
+															}
+															else{
 																echo '<span class="badge py-3 px-4 fs-7 badge-light-warning">Chờ xác nhận</span>';
-															} ?>
+															}?>
 														</td>
 														<td class="text-end">
 															<button type="button" class="btn btn-sm btn-icon btn-light btn-active-light-primary toggle h-25px w-25px" data-kt-table-widget-4="expand_row" value="<?php echo $rowOrder["id"] ?>">
@@ -580,7 +593,7 @@
 												<span class="text-gray-400 mt-1 fw-semibold fs-6">5 sản phẩm hàng đầu</span>
 											</h3>
 											<div class="card-toolbar">
-												<a href="../apps/ecommerce/sales/listing.html" class="btn btn-sm btn-light">Xem thêm</a>
+												<a href="../apps/ecommerce/sales/order" class="btn btn-sm btn-light">Xem thêm</a>
 											</div>
 										</div>
 										<div class="card-body pt-0">

@@ -123,7 +123,7 @@
                                     if($activePage == 'order-detail'){
                                 ?>
                                     <div class="menu-item">
-                                        <a class="menu-link <?php echo ($activePage == 'order-detail') ? 'active' : ''; ?>" href="../apps/ecommerce/sales/details.html">
+                                        <a class="menu-link <?php echo ($activePage == 'order-detail') ? 'active' : ''; ?>" href="#">
                                             <span class="menu-bullet">
                                                 <span class="bullet bullet-dot"></span>
                                             </span>

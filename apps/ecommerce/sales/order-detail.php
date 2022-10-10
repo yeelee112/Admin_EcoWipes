@@ -81,7 +81,7 @@ $rowOrder = mysqli_fetch_assoc($listOrder);
                                 </ul>
                             </div>
                             <div class="d-flex align-items-center py-1">
-                                Hallo buổi sáng tốt nành
+                                Hallo buổi sáng tốt lành
                             </div>
                         </div>
                     </div>
@@ -192,10 +192,13 @@ $rowOrder = mysqli_fetch_assoc($listOrder);
                                                                 if ($rowOrder["status_order"] == 1) {
                                                                     echo '<div class="badge badge-light-primary">Đã xác nhận</div>';
                                                                 }
-                                                                if ($rowOrder["status_order"] == 2) {
+                                                                else if ($rowOrder["status_order"] == 2) {
+                                                                    echo '<div class="badge badge-light-info">Đang giao hàng</div>';
+                                                                }
+                                                                else if ($rowOrder["status_order"] == 3) {
                                                                     echo '<div class="badge badge-light-success">Đã hoàn thành</div>';
                                                                 }
-                                                                if ($rowOrder["status_order"] == 3) {
+                                                                else if ($rowOrder["status_order"] == 4) {
                                                                     echo '<div class="badge badge-light-danger">Đã từ chối</div>';
                                                                 } else {
                                                                     echo '<div class="badge badge-light-warning">Chờ xác nhận</div>';
@@ -257,7 +260,7 @@ $rowOrder = mysqli_fetch_assoc($listOrder);
                                                                 </div>
                                                             </td>
                                                             <td class="fw-bold text-end">
-                                                                <a href="../../user-management/users/view.html" class="text-gray-600 text-hover-primary"><?php if ($rowOrder["email"] != NULL) {
+                                                                <a href="mailto:<?php if ($rowOrder["email"] != NULL) { echo $rowOrder["email"]; }  ?>" class="text-gray-600 text-hover-primary"><?php if ($rowOrder["email"] != NULL) {
                                                                                                                                                                 echo $rowOrder["email"];
                                                                                                                                                             }  ?></a>
                                                             </td>
@@ -306,7 +309,7 @@ $rowOrder = mysqli_fetch_assoc($listOrder);
                                                                 </div>
                                                             </td>
                                                             <td class="fw-bold text-end">
-                                                                <a href="../../invoices/view/invoice-3.html" class="text-gray-600 text-hover-primary">#INV-<?php echo after_last('-', $rowOrder["id"]); ?></a>
+                                                                <a href="https://thegioikhanuot.com/invoice?id=<?php echo $rowOrder["id"]; ?>" target="_blank" class="text-gray-600 text-hover-primary">#INV-<?php echo after_last('-', $rowOrder["id"]); ?></a>
                                                             </td>
                                                         </tr>
                                                         <tr>
@@ -411,11 +414,11 @@ $rowOrder = mysqli_fetch_assoc($listOrder);
                                                                     <tr>
                                                                         <td colspan="2">
                                                                             <div class="d-flex align-items-center">
-                                                                                <a href="../catalog/edit-product.html" class="symbol symbol-50px">
+                                                                                <a href="#" class="symbol symbol-50px">
                                                                                     <span class="symbol-label" style="background-image:url(<?php echo $rowItem["img_thumb"] ?>);"></span>
                                                                                 </a>
                                                                                 <div class="ms-5">
-                                                                                    <a href="../catalog/edit-product.html" class="fw-bold text-gray-600 text-hover-primary"><?php echo $rowItem["product_name"] ?></a>
+                                                                                    <a href="#" class="fw-bold text-gray-600 text-hover-primary"><?php echo $rowItem["product_name"] ?></a>
                                                                                     <div class="fs-7 text-muted">ID: <?php echo $rowItem["id"] ?></div>
                                                                                 </div>
                                                                             </div>

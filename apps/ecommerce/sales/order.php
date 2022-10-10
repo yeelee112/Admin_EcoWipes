@@ -144,13 +144,19 @@
                                                                 <div class="badge badge-light-primary">Đã xác nhận</div>
                                                             </td>';
 													}
-													if ($rowOrder["status_order"] == 2) {
+													else if ($rowOrder["status_order"] == 2) {
+														echo '
+                                                            <td class="text-end pe-0" data-order="Đang giao hàng">
+                                                                <div class="badge badge-light-info">Đang giao hàng</div>
+                                                            </td>';
+													}
+													else if ($rowOrder["status_order"] == 3) {
 														echo '
                                                             <td class="text-end pe-0" data-order="Đã hoàn thành">
                                                                 <div class="badge badge-light-success">Đã hoàn thành</div>
                                                             </td>';
 													}
-													if ($rowOrder["status_order"] == 3) {
+													else if ($rowOrder["status_order"] == 4) {
 														echo '
                                                             <td class="text-end pe-0" data-order="Đã hủy">
                                                                 <div class="badge badge-light-danger">Đã hủy</div>

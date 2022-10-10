@@ -75,7 +75,7 @@
 									</ul>
 								</div>
 								<div class="d-flex align-items-center py-1">
-                                	Hallo buổi sáng tốt nành
+                                	Hallo buổi sáng tốt lành
                             	</div>
 							</div>
 						</div>
@@ -102,8 +102,9 @@
 															<option></option>
 															<option value="0" <?php if($rowOrder["status_order"] == 0){ echo 'selected="selected"'; } ?>>Chờ xác nhận</option>
 															<option value="1" <?php if($rowOrder["status_order"] == 1){ echo 'selected="selected"'; } ?>>Đã xác nhận</option>
-															<option value="2" <?php if($rowOrder["status_order"] == 2){ echo 'selected="selected"'; } ?>>Đã hoàn thành</option>
-															<option value="3" <?php if($rowOrder["status_order"] == 3){ echo 'selected="selected"'; } ?>>Đã hủy</option>
+															<option value="2" <?php if($rowOrder["status_order"] == 2){ echo 'selected="selected"'; } ?>>Đang giao hàng</option>
+															<option value="3" <?php if($rowOrder["status_order"] == 3){ echo 'selected="selected"'; } ?>>Đã hoàn thành</option>
+															<option value="4" <?php if($rowOrder["status_order"] == 4){ echo 'selected="selected"'; } ?>>Đã hủy</option>
 														</select>
 														<div class="text-muted fs-7">Chọn phương thức vận chuyển.</div>
 													</div>
